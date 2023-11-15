@@ -1,0 +1,39 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.javacakegames.octagon'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.javacakegames.octagon"
+        minSdk 9 // Untested due to emulator issues
+        targetSdk 34
+        versionCode 200
+        versionName "2.0.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    buildFeatures {
+        viewBinding false
+    }
+    dependenciesInfo {
+        includeInApk false
+        includeInBundle false
+    }
+}
+
+dependencies {
+    // Newer versions increase app size
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+}
