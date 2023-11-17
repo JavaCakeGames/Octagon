@@ -7,13 +7,14 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.VideoView;
 
 public class MainActivity extends Activity {
 
   private VideoView videoView;
+  private AudioManager audio;
+  private int resumeVol;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +33,7 @@ public class MainActivity extends Activity {
       );
     }
 
-    // Raise system media volume to 1 if muted
-    AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-    if (audio.getStreamVolume(AudioManager.STREAM_MUSIC) == 0) {
-      audio.setStreamVolume(AudioManager.STREAM_MUSIC, 1, 0);
-    }
+    audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
     // We are ready for content
     setContentView(R.layout.activity_main);
@@ -49,6 +46,34 @@ public class MainActivity extends Activity {
     videoView.setOnPreparedListener(mp -> videoView.start());
     videoView.setOnCompletionListener(mp -> finish());
 
+  }
+
+  @Override
+  protected void onPause() {
+    super.onPause();
+    // Mute system volume on pause if it was 0 before entering app and
+    // user hasn't raised it.
+    if (resumeVol == 0 && getSysVol() == 1) {
+      setSysVol(0);
+    }
+  }
+
+  @Override
+  protected void onResume() {
+    super.onResume();
+    // Raise system media volume to 1 if muted
+    resumeVol = getSysVol();
+    if (resumeVol == 0) {
+      setSysVol(1);
+    }
+  }
+
+  private int getSysVol() {
+    return audio.getStreamVolume(AudioManager.STREAM_MUSIC);
+  }
+
+  private void setSysVol(int level) {
+    audio.setStreamVolume(AudioManager.STREAM_MUSIC, level, 0);
   }
 
 }
