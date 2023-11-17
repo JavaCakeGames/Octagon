@@ -8,7 +8,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
 import android.widget.VideoView;
+
+import java.util.Calendar;
 
 public class MainActivity extends Activity {
 
@@ -49,6 +52,15 @@ public class MainActivity extends Activity {
 
     videoView.setOnPreparedListener(mp -> videoView.start());
     videoView.setOnCompletionListener(mp -> finish());
+
+    Calendar calendar = Calendar.getInstance();
+    if (
+    calendar.get(Calendar.DATE) == 28 &&
+    calendar.get(Calendar.MONTH) == Calendar.AUGUST &&
+    calendar.get(Calendar.YEAR) <= 2069 // Doubt he'll live past 100
+    ) {
+      Toast.makeText(this, "Happy birthday, Jack!", Toast.LENGTH_SHORT).show();
+    }
 
   }
 
