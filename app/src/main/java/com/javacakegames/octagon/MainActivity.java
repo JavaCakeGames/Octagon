@@ -55,9 +55,9 @@ public class MainActivity extends Activity {
 
     Calendar calendar = Calendar.getInstance();
     if (
-    calendar.get(Calendar.DATE) == 28 &&
-    calendar.get(Calendar.MONTH) == Calendar.AUGUST &&
-    calendar.get(Calendar.YEAR) <= 2069 // Doubt he'll live past 100
+      calendar.get(Calendar.DATE) == 28 &&
+      calendar.get(Calendar.MONTH) == Calendar.AUGUST &&
+      calendar.get(Calendar.YEAR) <= 2069 // Doubt he'll live past 100
     ) {
       Toast.makeText(this, "Happy birthday, Jack!", Toast.LENGTH_SHORT).show();
     }
