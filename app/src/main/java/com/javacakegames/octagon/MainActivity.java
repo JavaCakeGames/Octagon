@@ -13,7 +13,7 @@ import android.widget.VideoView;
 public class MainActivity extends Activity {
 
   private VideoView videoView;
-  private AudioManager audio;
+  private AudioManager audioManager;
   private int resumeVol;
 
   @Override
@@ -22,8 +22,12 @@ public class MainActivity extends Activity {
 
     // Deal with camera cutout
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-      getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-      getWindow().getAttributes().layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
+      getWindow().setFlags(
+        WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+        WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+      );
+      getWindow().getAttributes().layoutInDisplayCutoutMode =
+        WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
     }
 
     // Hide navigation buttons
@@ -33,7 +37,7 @@ public class MainActivity extends Activity {
       );
     }
 
-    audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+    audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
     // We are ready for content
     setContentView(R.layout.activity_main);
@@ -69,11 +73,11 @@ public class MainActivity extends Activity {
   }
 
   private int getSysVol() {
-    return audio.getStreamVolume(AudioManager.STREAM_MUSIC);
+    return audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
   }
 
   private void setSysVol(int level) {
-    audio.setStreamVolume(AudioManager.STREAM_MUSIC, level, 0);
+    audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, level, 0);
   }
 
 }
