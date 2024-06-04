@@ -1,6 +1,7 @@
 package com.javacakegames.octagon;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.content.Context;
 import android.media.AudioManager;
 import android.net.Uri;
@@ -60,6 +61,12 @@ public class MainActivity extends Activity {
       calendar.get(Calendar.YEAR) <= 2069 // Doubt he'll live past 100
     ) {
       Toast.makeText(this, "Happy birthday, Jack!", Toast.LENGTH_SHORT).show();
+    }
+
+    if (Build.VERSION.SDK_INT >= 21) {
+      this.setTaskDescription(
+        new ActivityManager.TaskDescription(null, null, 0xff0b9df1)
+      );
     }
 
   }
