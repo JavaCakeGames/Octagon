@@ -7,84 +7,89 @@
         android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
         <activity
             android:name=".MainActivity"
+            android:exported="false"
+            android:screenOrientation="landscape">
+        </activity>
+        <activity-alias
+            android:name=".MainActivity1"
+            android:targetActivity=".MainActivity"
             android:label="Octagon:\nSide 1"
-            android:exported="true"
-            android:screenOrientation="landscape">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
+        </activity-alias>
+        <activity-alias
             android:name=".MainActivity2"
+            android:targetActivity=".MainActivity"
             android:label="Octagon:\nSide 2"
-            android:exported="true"
-            android:screenOrientation="landscape">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
+        </activity-alias>
+        <activity-alias
             android:name=".MainActivity3"
+            android:targetActivity=".MainActivity"
             android:label="Octagon:\nSide 3"
-            android:exported="true"
-            android:screenOrientation="landscape">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
+        </activity-alias>
+        <activity-alias
             android:name=".MainActivity4"
+            android:targetActivity=".MainActivity"
             android:label="Octagon:\nSide 4"
-            android:exported="true"
-            android:screenOrientation="landscape">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
+        </activity-alias>
+        <activity-alias
             android:name=".MainActivity5"
+            android:targetActivity=".MainActivity"
             android:label="Octagon:\nSide 5"
-            android:exported="true"
-            android:screenOrientation="landscape">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
+        </activity-alias>
+        <activity-alias
             android:name=".MainActivity6"
+            android:targetActivity=".MainActivity"
             android:label="Octagon:\nSide 6"
-            android:exported="true"
-            android:screenOrientation="landscape">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
+        </activity-alias>
+        <activity-alias
             android:name=".MainActivity7"
+            android:targetActivity=".MainActivity"
             android:label="Octagon:\nSide 7"
-            android:exported="true"
-            android:screenOrientation="landscape">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
+        </activity-alias>
+        <activity-alias
             android:name=".MainActivity8"
+            android:targetActivity=".MainActivity"
             android:label="Octagon:\nSide 8"
-            android:exported="true"
-            android:screenOrientation="landscape">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity-alias>
     </application>
 
 </manifest>
