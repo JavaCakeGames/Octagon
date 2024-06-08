@@ -10,8 +10,8 @@ android {
         applicationId "com.javacakegames.octagon"
         minSdk 1
         targetSdk 34
-        versionCode 230
-        versionName "2.3.0"
+        versionCode 231
+        versionName "2.3.1"
     }
 
     buildTypes {
