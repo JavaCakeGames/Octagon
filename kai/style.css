@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  background: #000;
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
+}
+
+header {
+  height: 24px;
+  line-height: 24px;
+  background: #0b9df1;
+  font-size: 17px;
+  color: #ffffff;
+  text-align: center;
+}
+
+video {
+  display: block;
+}
+
+nav {
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  background: #ccc;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+

@@ -1,0 +1,20 @@
+{
+  "name": "Octagon",
+  "version": "2.5.1",
+  "subtitle": "A simple KaiOS app that plays a video clip.",
+  "description": "A revival of my old Octagon app. Same thing, now with better support for a wider range of devices and open source.",
+  "launch_path": "/index.html",
+  "icons": {
+    "56": "/Octagon_56.png",
+    "112": "/Octagon_112.png"
+  },
+  "categories": [
+    "entertainment"
+  ],
+  "theme_color": "#0b9df1",
+  "developer": {
+    "name": "Java Cake Games",
+    "url": "https://javacakegames.itch.io/octagon"
+  },
+  "fullscreen": false
+}
